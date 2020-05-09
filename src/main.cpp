@@ -30,12 +30,17 @@
 #include <QCommandLineParser>
 #include <QTranslator>
 #include <QDebug>
+#include <QAccessible>
 
 #include <unistd.h>
 
 #include <dapplication.h>
 #include <DGuiApplicationHelper>
 #include <DLog>
+
+
+
+#include "accessible.h"
 
 DWIDGET_USE_NAMESPACE
 #ifdef DCORE_NAMESPACE
@@ -69,7 +74,8 @@ int main(int argv, char *args[])
     app.setApplicationVersion("3.0");
     app.loadTranslator();
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
-
+	//加载Accessible插件    这个插件是给测试使用的,可以用sniff软件查看相关的界面
+    QAccessible::installFactory(accessibleFactory);
     DLogManager::registerConsoleAppender();
 #ifndef QT_DEBUG
     DLogManager::registerFileAppender();

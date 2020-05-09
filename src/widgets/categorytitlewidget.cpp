@@ -47,6 +47,7 @@ CategoryTitleWidget::CategoryTitleWidget(const QString &title, QWidget *parent) 
     lineLayout->addStretch();
 
     setText(title);
+    setAccessibleName(title);
     setTitleOpacity(1);  // update the style of this widget by force.
     m_opacityAnimation->setDuration(300);
 

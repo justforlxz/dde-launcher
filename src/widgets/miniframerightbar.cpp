@@ -49,7 +49,7 @@ MiniFrameRightBar::MiniFrameRightBar(QWidget *parent)
 {
     m_modeToggleBtn->setFixedSize(24, 24);
     m_modeToggleBtn->setBackgroundRole(DPalette::Button);
-
+    m_modeToggleBtn->setAccessibleName("ModeToggle");
     m_modeToggleBtn->raise();
 
     bool hasManual = QProcess::execute("which", QStringList() << "dman") == 0;
@@ -118,6 +118,7 @@ MiniFrameRightBar::MiniFrameRightBar(QWidget *parent)
     bottomLayout->addWidget(m_powerBtn);
 
     QWidget *top_widget = new QWidget;
+    top_widget->setAccessibleName("TopWidget");
     QHBoxLayout *top_layout = new QHBoxLayout;
     top_layout->setMargin(0);
     top_layout->addWidget(m_avatar, 0, Qt::AlignVCenter | Qt::AlignLeft);
@@ -125,6 +126,7 @@ MiniFrameRightBar::MiniFrameRightBar(QWidget *parent)
     top_widget->setLayout(top_layout);
 
     QWidget *center_widget = new QWidget;
+    center_widget->setAccessibleName("CenterWidget");
     QVBoxLayout *center_layout = new QVBoxLayout;
     center_layout->setMargin(0);
     center_widget->setLayout(center_layout);
@@ -137,6 +139,7 @@ MiniFrameRightBar::MiniFrameRightBar(QWidget *parent)
     center_layout->addWidget(manualBtn);
 
     QWidget *bottom_widget = new QWidget;
+    bottom_widget->setAccessibleName("Bottom");
     QVBoxLayout *bottom_layout = new QVBoxLayout;
     bottom_layout->setMargin(0);
     bottom_layout->addWidget(m_datetimeWidget);

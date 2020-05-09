@@ -110,6 +110,7 @@ WindowedFrame::WindowedFrame(QWidget *parent)
     }
     m_maskBg->setPalette(pal);
     m_maskBg->setAutoFillBackground(true);
+    m_maskBg->setAccessibleName("MaskBg");
     m_maskBg->setFixedSize(size());
 
     m_windowHandle.setShadowRadius(60);
@@ -189,6 +190,7 @@ WindowedFrame::WindowedFrame(QWidget *parent)
 
     m_leftWidget = new QWidget;
     m_leftWidget->setLayout(containLayout);
+    m_leftWidget->setAccessibleName("LeftWidget");
     m_leftWidget->setFixedWidth(320);
 
     QHBoxLayout *mainLayout = new QHBoxLayout(this);

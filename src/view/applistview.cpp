@@ -51,7 +51,6 @@ AppListView::AppListView(QWidget *parent)
     viewport()->setAutoFillBackground(false);
     m_scrollAni->setEasingCurve(QEasingCurve::OutQuint);
     m_scrollAni->setDuration(800);
-
     horizontalScrollBar()->setEnabled(false);
     setFocusPolicy(Qt::NoFocus);
     setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);

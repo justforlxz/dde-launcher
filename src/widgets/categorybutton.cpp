@@ -43,7 +43,7 @@ CategoryButton::CategoryButton(const AppsListModel::AppCategory category, QWidge
     m_opacityAnimation(new QPropertyAnimation(this, "titleOpacity"))
 {
     const auto ratio = qApp->devicePixelRatio();
-
+    setAccessibleName("Btn-Category");
     setObjectName("CategoryButton");
     m_iconLabel->setFixedSize(22 * ratio, 22 * ratio);
     m_textLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);

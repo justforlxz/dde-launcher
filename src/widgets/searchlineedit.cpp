@@ -42,11 +42,13 @@ SearchLineEdit::SearchLineEdit(QWidget *parent) :
     m_icon->setIconSize(QSize(16, 16));
     m_icon->setFixedSize(16, 16);
     m_icon->setFlat(true);
+    m_icon->setAccessibleName("Icon");
 
     m_clear->setIconSize(QSize(16, 16));
     m_clear->setFixedSize(16, 16);
     m_clear->setVisible(false);
     m_clear->setFlat(true);
+    m_clear->setAccessibleName("Clear");
 
     themeChanged();
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, [ = ] {
@@ -57,8 +59,10 @@ SearchLineEdit::SearchLineEdit(QWidget *parent) :
     QFontMetrics fm(m_placeholderText->font());
     m_placeholderText->setFixedWidth(fm.width(m_placeholderText->text()) + 10);
     m_placeholderText->setForegroundRole(QPalette::BrightText);
+    m_placeholderText->setAccessibleName("PlaceholderText");
     m_floatWidget = new QWidget(this);
-
+    m_floatWidget->setAccessibleName("floatWidget");
+    
     m_editStyle = new SearchLineeditStyle(style());
 
     QHBoxLayout *floatLayout = new QHBoxLayout;

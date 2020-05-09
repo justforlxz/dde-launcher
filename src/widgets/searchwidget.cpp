@@ -45,24 +45,28 @@ SearchWidget::SearchWidget(QWidget *parent) :
     m_leftSpacing->setFixedWidth(0);
     m_rightSpacing->setFixedWidth(0);
 
+    m_leftSpacing->setAccessibleName("LeftSpacing");
+    m_rightSpacing->setAccessibleName("RightSpacing");
+
     m_toggleCategoryBtn = new DFloatingButton(this);
-    m_toggleCategoryBtn->setAccessibleName("mode-toggle-button");
+    m_toggleCategoryBtn->setAccessibleName("Btn-ToggleCategory");
     m_toggleCategoryBtn->setIcon(QIcon(":/icons/skin/icons/category_normal_22px.png"));
     m_toggleCategoryBtn->setIconSize(QSize(24, 24));
     m_toggleCategoryBtn->setFixedSize(QSize(BTN_WIDTH, BTN_HEIGHT));
     m_toggleCategoryBtn->setBackgroundRole(DPalette::Button);
 
     m_toggleModeBtn = new DFloatingButton(this);
+    m_toggleModeBtn->setAccessibleName("Btn-ToggleMode");
     m_toggleModeBtn->setIcon(QIcon(":/icons/skin/icons/unfullscreen_normal.png"));
     m_toggleModeBtn->setIconSize(QSize(24, 24));
     m_toggleModeBtn->setFixedSize(QSize(BTN_WIDTH, BTN_HEIGHT));
     m_toggleModeBtn->setBackgroundRole(DPalette::Button);
 
     m_searchEdit = new SearchLineEdit(this);
-    m_searchEdit->setAccessibleName("search-edit");
+    m_searchEdit->setAccessibleName("SearchEdit");
     m_searchEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     m_searchEdit->setFixedWidth(290);
-
+    setAccessibleName("From_Search");
     QHBoxLayout *mainLayout = new QHBoxLayout;
     mainLayout->setMargin(0);
     mainLayout->setSpacing(0);

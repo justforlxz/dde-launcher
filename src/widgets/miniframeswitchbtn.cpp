@@ -33,7 +33,9 @@ MiniFrameSwitchBtn::MiniFrameSwitchBtn(QWidget *parent)
     , m_allIconLabel(new QLabel)
 {
     setFocusPolicy(Qt::StrongFocus);
-
+    m_enterIcon->setAccessibleName("EnterIcon");
+    m_allIconLabel->setAccessibleName("AllIcon");
+    m_textLabel->setAccessibleName("Text");
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, [ = ](DGuiApplicationHelper::ColorType themeType) {
         if (DGuiApplicationHelper::LightType == themeType) {
             m_allIconLabel->setPixmap(renderSVG(":/widgets/images/all-dark.svg", QSize(24, 24)));
