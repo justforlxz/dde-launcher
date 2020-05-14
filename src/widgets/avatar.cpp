@@ -33,7 +33,7 @@ Avatar::Avatar(QWidget *parent)
     m_accountsInter = new AccountsInter("com.deepin.daemon.Accounts",
                                         "/com/deepin/daemon/Accounts",
                                         QDBusConnection::systemBus(), this);
-
+    this->setAccessibleDescription("This is the head image of the Launcher, which can quickly access the account in the control center");
     m_userInter = new UserInter("com.deepin.daemon.Accounts",
                                 QString("/com/deepin/daemon/Accounts/User%1").arg(getuid()),
                                 QDBusConnection::systemBus(), this);

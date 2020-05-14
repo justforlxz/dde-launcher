@@ -36,6 +36,7 @@ MiniFrameSwitchBtn::MiniFrameSwitchBtn(QWidget *parent)
     m_enterIcon->setAccessibleName("EnterIcon");
     m_allIconLabel->setAccessibleName("AllIcon");
     m_textLabel->setAccessibleName("Text");
+    m_textLabel->setAccessibleDescription("This refers to the label with 'all categories'. Since this control will become 'return', it uses 'text' instead");
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, [ = ](DGuiApplicationHelper::ColorType themeType) {
         if (DGuiApplicationHelper::LightType == themeType) {
             m_allIconLabel->setPixmap(renderSVG(":/widgets/images/all-dark.svg", QSize(24, 24)));
