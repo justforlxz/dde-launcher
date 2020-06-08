@@ -124,6 +124,7 @@ private slots:
     void searchDone(const QStringList &resultList);
     void markLaunched(QString appKey);
     void delayRefreshData();
+    void refreshAppListIcon();
 
 private:
     const ItemInfo createOfCategory(qlonglong category);
