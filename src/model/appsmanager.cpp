@@ -161,6 +161,19 @@ AppsManager::AppsManager(QObject *parent) :
             << tr("System")
             << tr("Other");
 
+    m_defaultIcon
+            << QString(":/icons/skin/icons/category_network_dark.svg")
+            << QString(":/icons/skin/icons/category_chat_dark.svg")
+            << QString(":/icons/skin/icons/category_music_dark.svg")
+            << QString(":/icons/skin/icons/category_video_dark.svg")
+            << QString(":/icons/skin/icons/category_graphic_dark.svg")
+            << QString(":/icons/skin/icons/category_game_dark.svg")
+            << QString(":/icons/skin/icons/category_office_dark.svg")
+            << QString(":/icons/skin/icons/category_reading_dark.svg")
+            << QString(":/icons/skin/icons/category_develop_dark.svg")
+            << QString(":/icons/skin/icons/category_system_dark.svg")
+            << QString(":/icons/skin/icons/category_others_dark.svg");
+    m_categoryIcon = m_defaultIcon;
 
     refreshAllList();
     refreshAppAutoStartCache();
@@ -285,18 +298,7 @@ void AppsManager::refreshAppListIcon()
 {
     m_categoryIcon.clear();
     if (DGuiApplicationHelper::instance()->themeType() == DGuiApplicationHelper::DarkType) {
-        m_categoryIcon
-                << QString(":/icons/skin/icons/category_network_dark.svg")
-                << QString(":/icons/skin/icons/category_chat_dark.svg")
-                << QString(":/icons/skin/icons/category_music_dark.svg")
-                << QString(":/icons/skin/icons/category_video_dark.svg")
-                << QString(":/icons/skin/icons/category_graphic_dark.svg")
-                << QString(":/icons/skin/icons/category_game_dark.svg")
-                << QString(":/icons/skin/icons/category_office_dark.svg")
-                << QString(":/icons/skin/icons/category_reading_dark.svg")
-                << QString(":/icons/skin/icons/category_develop_dark.svg")
-                << QString(":/icons/skin/icons/category_system_dark.svg")
-                << QString(":/icons/skin/icons/category_others_dark.svg");
+          m_categoryIcon = m_defaultIcon;
     } else {
         m_categoryIcon
                 << QString(":/icons/skin/icons/category_network.svg")

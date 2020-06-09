@@ -161,6 +161,7 @@ private:
     std::map<std::pair<ItemInfo, int>, int> m_notExistIconMap;
     QStringList m_categoryTs;
     QStringList m_categoryIcon;
+    QStringList m_defaultIcon;
 };
 
 #endif // APPSMANAGER_H
