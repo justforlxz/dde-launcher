@@ -846,6 +846,13 @@ void FullScreenFrame::initConnection()
     connect(m_appsManager, &AppsManager::requestTips, this, &FullScreenFrame::showTips);
     connect(m_appsManager, &AppsManager::requestHideTips, this, &FullScreenFrame::hideTips);
     connect(m_appsManager, &AppsManager::dockGeometryChanged, this, &FullScreenFrame::updateDockPosition);
+
+    QScreen *primaryScreen = qApp->primaryScreen();
+    connect(primaryScreen, &QScreen::virtualGeometryChanged, this, [this](){
+        update();
+        updateDockPosition();
+        layoutChanged();
+    });
 }
 
 void FullScreenFrame::showLauncher()
